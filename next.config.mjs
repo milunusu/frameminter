@@ -1,12 +1,16 @@
-import path from 'path';
-
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, 'utils');
-    return config;
-  },
-};
-
-export default nextConfig;
+    webpack: (config, { isServer }) => {
+      if (!isServer) {
+        config.resolve.fallback.fs = false; // Ensure 'fs' is not polyfilled
+      }
+      config.module.rules.push({
+        test: /\.json$/,
+        type: 'javascript/auto',
+        use: ['json-loader'],
+      });
+      return config;
+    },
+  };
+  
+  export default nextConfig;
+  
