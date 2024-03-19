@@ -1,9 +1,10 @@
 {
-    "compiler": {
-        "version": "0.8.24+commit.e11b9ed9"
-    },
-    "language": "Solidity",
-    "abi": [
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
         
             {
                 "inputs": [],
@@ -462,3 +463,4 @@
             }
         ]
     }
+}
