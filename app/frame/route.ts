@@ -12,6 +12,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const frameMetadata = await fdk.getFrameMetadata({
       post_url: `${process.env.BASE_URL}/frame`,
+      input: {text: "Hello, world!"},
       buttons: [{ label: "Mint NFT", action: "post" }],
       aspect_ratio: "1:1",
       image: { url: "<https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r>"},
@@ -40,7 +41,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         aspect_ratio: "1:1",
         image: { url: "<https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r>"},
        // cid: "https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
-      });
+      }); //add state?
       return new NextResponse(frameMetadata);
     } catch (error) {
       console.log(error);
