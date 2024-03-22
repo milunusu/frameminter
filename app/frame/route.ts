@@ -14,7 +14,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
       post_url: `${process.env.BASE_URL}/frame`,
       buttons: [{ label: "Mint NFT", action: "post" }],
       aspect_ratio: "1:1",
-      cid: "QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
+      image: { url: "<https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r>"},
+      // cid: "https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
     });
     return new NextResponse(frameMetadata);
   } catch (error) {
@@ -37,7 +38,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
         post_url: `${process.env.BASE_URL}/redirect`,
         buttons: [{ label: "Learn How to Make This", action: "post_redirect" }],
         aspect_ratio: "1:1",
-        cid: "QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
+        image: { url: "<https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r>"},
+       // cid: "https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
       });
       return new NextResponse(frameMetadata);
     } catch (error) {
@@ -49,7 +51,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
       post_url: `${process.env.BASE_URL}/redirect`,
       buttons: [{ label: "Learn How to Make This", action: "post_redirect" }],
       aspect_ratio: "1:1",
-      cid: "QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
+      image: { url: "<https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r>"},
+      //cid: "https://indigo-advisory-gorilla-502.mypinata.cloud/ipfs/QmWRFE3guZb1Du4uhTHDbtcDf2K99CgSZZeem9uswLr66r",
     });
     return new NextResponse(frameMetadata);
   }
